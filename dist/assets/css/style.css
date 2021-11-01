@@ -368,6 +368,11 @@ textarea:focus {
 
 .glazing_block {
   display: inline-block;
+  padding-top: 10px;
+  border-top: 1rem solid transparent;
+}
+.glazing_block.active {
+  border-top: 1rem solid #0089cd;
 }
 
 .glazing_block img {
