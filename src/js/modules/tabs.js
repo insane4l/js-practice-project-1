@@ -1,6 +1,6 @@
 const tabs = () => {
 
-    function bindTabs(headerSelector, tabSelector, contentSelector, activeClass) {
+    function bindTabs(headerSelector, tabSelector, contentSelector, activeClass, cssDisplay = 'block') {
         const header = document.querySelector(headerSelector),
               tabs = header.querySelectorAll(tabSelector),
               content = document.querySelectorAll(contentSelector);
@@ -14,7 +14,7 @@ const tabs = () => {
 
         function showTabContent(i = 0) {
             tabs[i].classList.add(activeClass);
-            content[i].style.display = 'block';
+            content[i].style.display = cssDisplay;
         };
 
         function checkTarget(target) {
@@ -44,6 +44,7 @@ const tabs = () => {
     
     bindTabs('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
     bindTabs('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
+    bindTabs('.balcon_icons', '.balcon_icons_img', '.big_img > img', 'do_image_more', 'inline-block');
 }
 
 export default tabs;
