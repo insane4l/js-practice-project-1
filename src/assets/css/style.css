@@ -1100,6 +1100,53 @@ textarea:focus {
   padding: 1rem 5rem;
 }
 
+.faded {
+  animation-name: faded;
+  animation-duration: 1s;
+}
+
+@keyframes faded {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.from-left {
+  animation-name: from-left;
+  animation-duration: 0.5s;
+}
+
+.from-right {
+  animation-name: from-right;
+  animation-duration: 0.5s;
+}
+
+@keyframes from-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes from-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
 /*Media*/
 @media (max-width: 1400px) {
   .main {

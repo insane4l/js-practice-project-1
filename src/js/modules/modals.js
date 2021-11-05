@@ -1,11 +1,7 @@
+import openModal from "../utils/openModal";
 import closeModals from "../utils/closeModals";
 
 const modals = () => {
-
-    const openModal = (modal) => {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    };
 
     function bindModal(triggerSelector, modalSelector, closeSelector, closeOnOverlay = true) {
         const trigger = document.querySelectorAll(triggerSelector),

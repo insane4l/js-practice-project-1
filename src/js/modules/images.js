@@ -1,3 +1,6 @@
+import closeModals from "../utils/closeModals";
+import openModal from "../utils/openModal";
+
 const images = () => {
     const wrapper = document.querySelector('.works'),
           overlay = document.createElement('div'),
@@ -13,17 +16,17 @@ const images = () => {
 
     wrapper.addEventListener('click', (e) => {
         e.preventDefault();
-        
+
         const target = e.target;
 
         if ( target && target.classList.contains('preview') ) {
             const path = target.parentNode.getAttribute('href');
             bigImage.setAttribute('src', path);
-            overlay.style.display = 'flex';
+            openModal(overlay, 'flex');
         }
 
         if (target && target.matches('div.popup')) {
-            overlay.style.display = 'none';
+            closeModals(overlay);
         }
     });
 

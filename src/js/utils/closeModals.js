@@ -8,6 +8,8 @@ const closeModals = (modal, windows) => {
     if (modal) {
         modal.style.display = 'none';
     }
+
+    document.body.style.marginRight = `0px`;
     document.body.style.overflow = '';
 };
 
