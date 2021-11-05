@@ -17808,6 +17808,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/forms */ "./src/js/modules/forms.js");
 /* harmony import */ var _modules_setComplexFormValues__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/setComplexFormValues */ "./src/js/modules/setComplexFormValues.js");
 /* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/timer */ "./src/js/modules/timer.js");
+/* harmony import */ var _modules_images__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/images */ "./src/js/modules/images.js");
+
 
 
 
@@ -17825,6 +17827,7 @@ window.addEventListener('DOMContentLoaded', function () {
   Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])();
   Object(_modules_forms__WEBPACK_IMPORTED_MODULE_3__["default"])(valuesOfComplexForm);
   Object(_modules_timer__WEBPACK_IMPORTED_MODULE_5__["default"])('#timer1', timerDeadline);
+  Object(_modules_images__WEBPACK_IMPORTED_MODULE_6__["default"])();
 });
 
 /***/ }),
@@ -17932,6 +17935,45 @@ var forms = function forms(calcValues) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (forms);
+
+/***/ }),
+
+/***/ "./src/js/modules/images.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/images.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var images = function images() {
+  var wrapper = document.querySelector('.works'),
+      overlay = document.createElement('div'),
+      bigImage = document.createElement('img');
+  overlay.classList.add('popup');
+  overlay.style.justifyContent = 'center';
+  overlay.style.alignItems = 'center';
+  overlay.style.display = 'none';
+  wrapper.append(overlay);
+  overlay.append(bigImage);
+  wrapper.addEventListener('click', function (e) {
+    e.preventDefault();
+    var target = e.target;
+
+    if (target && target.classList.contains('preview')) {
+      var path = target.parentNode.getAttribute('href');
+      bigImage.setAttribute('src', path);
+      overlay.style.display = 'flex';
+    }
+
+    if (target && target.matches('div.popup')) {
+      overlay.style.display = 'none';
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (images);
 
 /***/ }),
 

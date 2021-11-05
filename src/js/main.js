@@ -4,6 +4,7 @@ import tabs from './modules/tabs';
 import forms from './modules/forms';
 import setComplexFormValues from './modules/setComplexFormValues';
 import timer from './modules/timer';
+import images from './modules/images';
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -16,5 +17,5 @@ window.addEventListener('DOMContentLoaded', () => {
     tabs();
     forms(valuesOfComplexForm);
     timer('#timer1', timerDeadline);
-
+    images();
 });
